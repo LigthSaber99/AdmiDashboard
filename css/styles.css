@@ -1,0 +1,174 @@
+/* Estilos generales para el body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía legible y moderna */
+    background-color: #29200E; /* Color de fondo marrón muy oscuro (fallback si la imagen no carga) */
+
+    /* Imagen de fondo principal */
+    background-image: url('../assets/risen-wang-20jX9b35r_M-unsplash.jpg'); /* Reemplaza con la ruta correcta */
+    background-size: cover; /* Imagen cubre todo el fondo */
+    background-position: center; /* Centrado */
+    background-repeat: no-repeat; /* Sin repetición */
+    background-attachment: fixed; /* Imagen fija al hacer scroll */
+
+    color: #FCEB01; /* Color de texto general amarillo claro para buen contraste */
+}
+
+/* Logo de login */
+.login-logo {
+    max-width: 200px; /* Tamaño máximo ancho */
+    height: auto; /* Altura proporcional */
+    display: block; /* Para centrar */
+    margin: 0 auto 20px auto; /* Centrado horizontal y margen inferior */
+}
+
+/* Contenedor del login centrado y con posición relativa para z-index */
+.container.d-flex.justify-content-center.align-items-center.min-vh-100 {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tarjeta principal (login, registro, etc) */
+.card {
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para profundidad */
+    background-color: rgba(244, 244, 244, 0.9); /* Fondo semi-transparente (color aclarado) */
+    color: #0c0c0c; /* Texto oscuro dentro de la tarjeta */
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #F4F4F4; /* Fondo claro (se puede ajustar) */
+    color: #0c0c0c; /* Texto oscuro */
+}
+
+/* Clase para asegurar que elementos tengan altura mínima igual a la ventana */
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+/* Estilos para inputs y selects */
+.form-control {
+    background-color: #fff; /* Fondo blanco para los campos */
+    color: #FCEB01; /* Texto amarillo claro */
+    border-color: #725817; /* Borde marrón oscuro */
+}
+
+/* Placeholder dentro de inputs */
+.form-control::placeholder {
+    color: rgba(252, 235, 1, 0.7); /* Amarillo claro translúcido */
+}
+
+/* Estilos para inputs al recibir foco */
+.form-control:focus {
+    background-color: #fff; /* Fondo blanco */
+    color: #FCEB01; /* Texto amarillo */
+    border-color: #C39717; /* Borde mostaza */
+    box-shadow: 0 0 0 0.25rem rgba(195, 151, 23, 0.25); /* Sombra difusa */
+}
+
+/* Etiquetas de los formularios */
+.form-label {
+    color: #0c0c0c; /* Texto oscuro para buena legibilidad */
+}
+
+/* Botón principal (ej. enviar formularios) */
+.btn-primary {
+    background-color: #C39717; /* Mostaza */
+    border-color: #C39717;
+    color: #29200E; /* Texto marrón oscuro */
+}
+
+/* Hover botón primary */
+.btn-primary:hover {
+    background-color: #997619; /* Mostaza más oscuro */
+    border-color: #997619;
+    color: #29200E;
+}
+
+/* Botón secundario, usado para registro u otras acciones */
+.btn-success {
+    background-color: #725817; /* Marrón oscuro */
+    border-color: #725817;
+    color: #FCEB01; /* Texto amarillo */
+}
+
+/* Hover botón success */
+.btn-success:hover {
+    background-color: #4C3B14; /* Marrón aún más oscuro */
+    border-color: #4C3B14;
+    color: #FCEB01;
+}
+
+/* Botón info, ejemplo para “Ver detalles” */
+.btn-info {
+    background-color: #FCEB01; /* Amarillo brillante */
+    border-color: #FCEB01;
+    color: #29200E; /* Texto marrón oscuro */
+}
+
+/* Hover botón info */
+.btn-info:hover {
+    background-color: #C39717; /* Mostaza */
+    border-color: #C39717;
+    color: #29200E;
+}
+
+/* Botón secundario (ej. volver al dashboard) */
+.btn-secondary {
+    background-color: #997619; /* Marrón dorado */
+    border-color: #997619;
+    color: #FCEB01;
+}
+
+/* Hover botón secondary */
+.btn-secondary:hover {
+    background-color: #725817; /* Marrón oscuro */
+    border-color: #725817;
+    color: #FCEB01;
+}
+
+/* Botón peligro (ej. eliminar video) */
+.btn-danger {
+    background-color: #4C3B14; /* Marrón oscuro */
+    border-color: #4C3B14;
+    color: #FCEB01;
+}
+
+/* Hover botón danger */
+.btn-danger:hover {
+    background-color: #29200E; /* Marrón muy oscuro */
+    border-color: #29200E;
+    color: #FCEB01;
+}
+
+/* Línea horizontal separadora */
+hr {
+    border-top: 1px solid #725817; /* Línea marrón oscuro */
+}
+
+/* Texto atenuado (muted) */
+.text-muted {
+    color: rgba(252, 235, 1, 0.7) !important; /* Amarillo claro translúcido */
+}
+
+/* Clases para colores específicos según tipo de suscripción */
+
+/* Suscripción Cobre */
+.subscription-cobre {
+    color: #997619; /* Marrón dorado */
+    font-weight: bold;
+}
+
+/* Suscripción Plata */
+.subscription-plata {
+    color: #C0C0C0; /* Gris claro/plata */
+    font-weight: bold;
+}
+
+/* Suscripción Oro */
+.subscription-oro {
+    color: #FCEB01; /* Amarillo brillante */
+    font-weight: bold;
+}

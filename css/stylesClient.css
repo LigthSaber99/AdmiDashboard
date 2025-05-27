@@ -1,0 +1,103 @@
+/* Imagen de fondo para toda la página */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/risen-wang-20jX9b35r_M-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal con fondo blanco y texto negro */
+.container {
+    margin-top: 3rem;
+    max-width: 700px;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #0c0c0c; /* Texto negro */
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Tarjeta que contiene los detalles - sin fondo, solo para estructura */
+.card {
+    background-color: transparent; /* Transparente porque container es blanco */
+    color: inherit; /* Hereda color negro del container */
+    border: none; /* Sin borde */
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Encabezado de la tarjeta: fondo mostaza, texto negro */
+.card-header {
+    background-color: #C39717; /* Mostaza */
+    color: #29200E; /* Marrón muy oscuro para buen contraste */
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1rem 1.5rem;
+    border-bottom: none;
+    font-size: 1.5rem;
+}
+
+/* Filas con la información */
+.row.mb-3 > div {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Etiquetas en negrita */
+.row.mb-3 strong {
+    color: #29200E; /* Marrón muy oscuro para contraste */
+}
+
+/* Valores */
+.row.mb-3 span {
+    color: #0c0c0c; /* Negro */
+}
+
+/* Botón Volver */
+.btn-secondary {
+    background-color: #997619;
+    border-color: #997619;
+    color: #Fff;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #0c0c0c;
+    border-color: #725817;
+    color: #fff;
+}
+
+/* Clases para colores de suscripciones */
+.subscription-cobre {
+    color: #997619; /* Marrón dorado */
+    font-weight: bold;
+}
+
+.subscription-plata {
+    color: #C0C0C0; /* Plata */
+    font-weight: bold;
+}
+
+.subscription-oro {
+    color: #FCEB01; /* Amarillo brillante */
+    font-weight: bold;
+}
+
+/* Responsive: ajustar margen en móviles */
+@media (max-width: 576px) {
+    .container {
+        margin-top: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+    .row.mb-3 > div {
+        font-size: 1rem;
+        padding: 0.4rem 0.5rem;
+    }
+}

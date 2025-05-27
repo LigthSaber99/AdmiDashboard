@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Definición de codificación de caracteres -->
+    <meta charset="UTF-8">
+    <!-- Permite que la página sea responsiva en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Dashboard de Gimnasio</title>
+    <!-- Bootstrap CSS para estilos y diseño responsivo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados generales -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Estilos personalizados para la barra lateral del dashboard -->
+    <link rel="stylesheet" href="css/dashboard-sidebar.css">
+</head>
+<body>
+    <!-- Contenedor principal flexible que engloba sidebar y contenido principal -->
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar / barra lateral con fondo oscuro -->
+        <div class="bg-dark text-white border-end" id="sidebar-wrapper">
+            <!-- Encabezado del sidebar con foto de perfil, nombre y rol del usuario -->
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                <img src="/assets/descarga.jpg" alt="Foto de Perfil" class="rounded-circle mb-2 profile-pic">
+                <h5 id="adminName">Nombre Usuario</h5>
+                <small id="adminRole">Rol: Admin/Coach</small>
+            </div>
+            <!-- Menú de navegación dentro del sidebar -->
+            <div class="list-group list-group-flush my-3">
+                <!-- Enlaces para cambiar de sección, con atributos para manejo dinámico -->
+                <a href="#clients-section" class="list-group-item list-group-item-action bg-dark text-white active" data-section="clients">Clientes</a>
+                <a href="#register-client-section" class="list-group-item list-group-item-action bg-dark text-white" data-section="register-client">Registrar Cliente</a>
+                <a href="#upload-videos-section" class="list-group-item list-group-item-action bg-dark text-white" data-section="upload-videos">Subir Videos</a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white" id="logoutBtn">Cerrar Sesión</a>
+            </div>
+        </div>
+
+        <!-- Contenido principal de la página -->
+        <div id="page-content-wrapper">
+
+            <!-- Barra de navegación superior con botón para mostrar/ocultar sidebar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-primary" id="sidebarToggle">Menú</button>
+                    <!-- Título dinámico que cambia según la sección activa -->
+                    <h3 class="ms-3 mb-0" id="currentSectionTitle">Lista de Clientes</h3>
+                </div>
+            </nav>
+
+            <!-- Contenedor para las diferentes secciones del dashboard -->
+            <div class="container-fluid py-4">
+
+                <!-- Sección: Lista de clientes -->
+                <section id="clients-section" class="dashboard-section active">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    Clientes Registrados
+                                </div>
+                                <!-- Lista dinámica donde se mostrarán los clientes -->
+                                <ul class="list-group list-group-flush" id="clientList">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección: Formulario para registrar nuevo cliente -->
+                <section id="register-client-section" class="dashboard-section d-none">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card p-4 shadow-lg">
+                                <h4 class="text-center mb-4">Registrar Nuevo Cliente</h4>
+                                <form id="registerClientForm">
+                                    <!-- Campo: Nombre Completo -->
+                                    <div class="mb-3">
+                                        <label for="clientName" class="form-label">Nombre Completo</label>
+                                        <input type="text" class="form-control" id="clientName" required>
+                                    </div>
+                                    <!-- Campo: Correo Electrónico -->
+                                    <div class="mb-3">
+                                        <label for="clientEmail" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="clientEmail" required>
+                                    </div>
+                                    <!-- Campo: Peso en kg -->
+                                    <div class="mb-3">
+                                        <label for="clientWeight" class="form-label">Peso (kg)</label>
+                                        <input type="number" step="0.1" class="form-control" id="clientWeight" required>
+                                    </div>
+                                    <!-- Campo: Altura en cm -->
+                                    <div class="mb-3">
+                                        <label for="clientHeight" class="form-label">Altura (cm)</label>
+                                        <input type="number" step="1" class="form-control" id="clientHeight" required>
+                                    </div>
+                                    <!-- Campo: Selección de plan nutricional -->
+                                    <div class="mb-3">
+                                        <label for="clientNutritionalPlan" class="form-label">Plan Nutricional</label>
+                                        <select class="form-select" id="clientNutritionalPlan" required>
+                                            <option value="">Selecciona un plan</option>
+                                            <option value="Dieta Balanceada">Dieta Balanceada</option>
+                                            <option value="Corte">Corte</option>
+                                            <option value="Volumen">Volumen</option>
+                                        </select>
+                                    </div>
+                                    <!-- Campo: Selección de objetivo de ejercicio -->
+                                    <div class="mb-3">
+                                        <label for="clientObjective" class="form-label">Objetivo de Ejercicio</label>
+                                        <select class="form-select" id="clientObjective" required>
+                                            <option value="">Selecciona un objetivo</option>
+                                            <option value="Ganar Músculo">Ganar Músculo</option>
+                                            <option value="Perder Peso">Perder Peso</option>
+                                            <option value="Mejorar Resistencia">Mejorar Resistencia</option>
+                                            <option value="Mantenimiento">Mantenimiento</option>
+                                        </select>
+                                    </div>
+                                    <!-- Campo: Selección de tipo de suscripción -->
+                                    <div class="mb-3">
+                                        <label for="clientSubscription" class="form-label">Suscripción</label>
+                                        <select class="form-select" id="clientSubscription" required>
+                                            <option value="">Selecciona una suscripción</option>
+                                            <option value="Cobre">Cobre</option>
+                                            <option value="Plata">Plata</option>
+                                            <option value="Oro">Oro</option>
+                                        </select>
+                                    </div>
+                                    <!-- Botón para enviar el formulario -->
+                                    <button type="submit" class="btn btn-primary w-100">Registrar Cliente</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección: Formulario para subir videos motivacionales -->
+                <section id="upload-videos-section" class="dashboard-section d-none">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card p-4 shadow-lg">
+                                <h4 class="text-center mb-4">Subir Video Motivacional</h4>
+                                <form id="uploadVideoForm">
+                                    <!-- Campo: Título del video -->
+                                    <div class="mb-3">
+                                        <label for="videoTitle" class="form-label">Título del Video</label>
+                                        <input type="text" class="form-control" id="videoTitle" required>
+                                    </div>
+                                    <!-- Campo: URL del video -->
+                                    <div class="mb-3">
+                                        <label for="videoUrl" class="form-label">URL del Video (Ej. YouTube, Vimeo)</label>
+                                        <input type="url" class="form-control" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." required>
+                                    </div>
+                                    <!-- Campo: Descripción opcional -->
+                                    <div class="mb-3">
+                                        <label for="videoDescription" class="form-label">Descripción (Opcional)</label>
+                                        <textarea class="form-control" id="videoDescription" rows="3"></textarea>
+                                    </div>
+                                    <!-- Botón para enviar el formulario -->
+                                    <button type="submit" class="btn btn-primary w-100">Guardar Video</button>
+                                </form>
+
+                                <hr class="my-4">
+
+                                <!-- Lista donde se mostrarán los videos guardados -->
+                                <h5>Videos Guardados</h5>
+                                <div id="videoList" class="list-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle con Popper.js para funcionalidades interactivas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado para manejar la lógica del dashboard -->
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+

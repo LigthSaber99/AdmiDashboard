@@ -1,0 +1,149 @@
+/* Contenedor principal: oculta el scroll horizontal */
+#wrapper {
+    overflow-x: hidden;
+}
+
+/* Sidebar (barra lateral) */
+#sidebar-wrapper {
+    min-height: 100vh; /* Altura mínima para cubrir toda la pantalla */
+    margin-left: -15rem; /* Oculta sidebar inicialmente fuera de pantalla */
+    transition: margin .25s ease-out; /* Transición suave al mostrar/ocultar */
+    background-color: #29200E; /* Fondo marrón muy oscuro */
+    color: #FFFFFF; /* Texto blanco por defecto */
+    border-right: 1px solid #4C3B14; /* Borde derecho oscuro */
+}
+
+/* Encabezado dentro del sidebar */
+#sidebar-wrapper .sidebar-heading {
+    padding: 1.5rem 1.25rem; /* Espaciado interno */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    background-color: #000000; /* Fondo negro puro */
+    color: #FCEB01; /* Texto amarillo brillante */
+    border-bottom: 1px solid #4C3B14; /* Borde inferior oscuro */
+}
+
+/* Lista de navegación dentro del sidebar */
+#sidebar-wrapper .list-group {
+    width: 15rem; /* Ancho fijo para el menú */
+}
+
+/* Contenedor principal del contenido (área al lado del sidebar) */
+#page-content-wrapper {
+    min-width: 100vw; /* Ocupa todo el ancho de la ventana */
+    background-color: #FFFFFF; /* Fondo blanco */
+    background-image: url('../assets/risen-wang-20jX9b35r_M-unsplash.jpg'); /* Imagen de fondo (reemplaza ruta según corresponda) */
+    background-size: cover; /* Imagen cubre todo el fondo */
+    background-position: center; /* Imagen centrada */
+    background-repeat: no-repeat; /* No repetir imagen */
+    background-attachment: fixed; /* Imagen fija al hacer scroll */
+}
+
+/* Estilos para las tarjetas dentro del contenido */
+#page-content-wrapper .card {
+    background-color: #C39717; /* Fondo mostaza/dorado oscuro */
+    color: #FFFFFF; /* Texto blanco */
+    border: 1px solid #997619; /* Borde marrón dorado */
+}
+
+/* Encabezado de las tarjetas */
+#page-content-wrapper .card-header {
+    background-color: #997619; /* Fondo marrón dorado */
+    color: #FFFFFF; /* Texto blanco */
+    border-bottom: 1px solid #725817; /* Borde inferior marrón más oscuro */
+}
+
+/* Items de listas dentro del contenido */
+#page-content-wrapper .list-group-item {
+    background-color: #FFFFFF; /* Fondo blanco */
+    color: #29200E; /* Texto marrón muy oscuro */
+    border-color: #E0E0E0; /* Borde claro */
+}
+
+/* Hover (al pasar ratón) en items de lista */
+#page-content-wrapper .list-group-item:hover {
+    background-color: #F0F0F0; /* Fondo más claro */
+}
+
+/* Sidebar visible al togglear */
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0; /* Sidebar visible */
+}
+
+/* Ajustes para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0; /* Sidebar visible por defecto en pantallas >=768px */
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%; /* Ajusta ancho del contenido */
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem; /* Oculta sidebar al togglear en pantallas >=768px */
+    }
+}
+
+/* Estilo para la foto de perfil en sidebar */
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    object-fit: cover; /* Ajusta imagen sin deformar */
+    border: 2px solid #C39717; /* Borde mostaza */
+}
+
+/* Items de la lista de navegación en sidebar */
+.list-group-item {
+    background-color: #29200E; /* Fondo marrón muy oscuro */
+    color: #FFFFFF; /* Texto blanco */
+    border-color: #4C3B14; /* Borde oscuro */
+}
+
+/* Hover en items del sidebar */
+.list-group-item.list-group-item-action:hover {
+    background-color: #4C3B14; /* Fondo marrón oscuro */
+    color: #FFFFFF; /* Texto blanco */
+}
+
+/* Item activo en el sidebar */
+.list-group-item.active {
+    background-color: #C39717 !important; /* Fondo mostaza */
+    border-color: #C39717 !important; /* Borde mostaza */
+    color: #29200E !important; /* Texto marrón muy oscuro */
+}
+
+/* Navbar en contenido principal */
+.navbar {
+    background-color: #C39717 !important; /* Fondo mostaza/dorado */
+    border-bottom: 1px solid #997619; /* Borde marrón dorado */
+}
+
+/* Links de navegación en navbar */
+.navbar-light .navbar-nav .nav-link {
+    color: #FFFFFF; /* Texto blanco */
+}
+
+/* Marca (logo o texto) en navbar */
+.navbar-light .navbar-brand {
+    color: #FFFFFF; /* Texto blanco */
+}
+
+/* Botón primary (ej. Toggle sidebar) */
+.btn-primary {
+    background-color: #997619; /* Marrón dorado */
+    border-color: #997619;
+    color: #FFFFFF; /* Texto blanco */
+}
+
+/* Hover en botón primary */
+.btn-primary:hover {
+    background-color: #725817; /* Marrón más oscuro */
+    border-color: #725817;
+    color: #FFFFFF;
+}
+
+/* Título principal (h3) */
+h3 {
+    color: #29200E; /* Marrón muy oscuro */
+}
